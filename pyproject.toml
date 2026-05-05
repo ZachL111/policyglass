@@ -1,0 +1,5 @@
+[project]
+name = "policyglass"
+version = "0.1.0"
+description = "Lint access policies for broad grants and shadowed conditions."
+requires-python = ">=3.11"
