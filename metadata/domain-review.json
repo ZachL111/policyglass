@@ -1,0 +1,73 @@
+{
+  "repo": "policyglass",
+  "language": "Python",
+  "category": "Security tooling",
+  "goal": "Lint access policies for broad grants and shadowed conditions.",
+  "review_model": {
+    "terms": [
+      "trust boundary",
+      "claim drift",
+      "replay exposure",
+      "policy width"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "trust boundary",
+      "signal": 68,
+      "slack": 47,
+      "drag": 19,
+      "confidence": 52,
+      "score": 178,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "claim drift",
+      "signal": 46,
+      "slack": 43,
+      "drag": 22,
+      "confidence": 59,
+      "score": 128,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "replay exposure",
+      "signal": 61,
+      "slack": 36,
+      "drag": 11,
+      "confidence": 48,
+      "score": 173,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "policy width",
+      "signal": 76,
+      "slack": 51,
+      "drag": 9,
+      "confidence": 58,
+      "score": 234,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "trust boundary",
+      "signal": 60,
+      "slack": 46,
+      "drag": 13,
+      "confidence": 48,
+      "score": 175,
+      "lane": "ship"
+    }
+  ]
+}
